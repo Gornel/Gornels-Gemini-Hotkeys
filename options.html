@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keybind Settings</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 400px; background-color: #f9f9fb; }
+    .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; }
+    h3 { margin: 24px 0 4px; font-size: 15px; color: #4f46e5; }
+    h3:first-of-type { margin-top: 15px; }
+    label { display: block; margin-top: 15px; font-weight: bold; font-size: 14px; color: #333; }
+    input, select { width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; cursor: pointer; background: white; }
+    input:focus, select:focus { outline: 2px solid #4f46e5; border-color: transparent; }
+    p.help { font-size: 12px; color: #666; margin-bottom: 20px; }
+    hr { margin-top: 20px; border: none; border-top: 1px solid #eee; }
+    button { margin-top: 20px; width: 100%; padding: 12px; background: #4f46e5; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #4338ca; }
+    #status { margin-top: 15px; text-align: center; color: #16a34a; font-weight: bold; height: 20px; }
+    #warning { margin-top: 10px; font-size: 13px; color: #b45309; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Keybind Settings</h2>
+    <p class="help">Click inside a box and press the key combination you want to assign.</p>
+
+    <h3>Model Switching</h3>
+
+    <label>Switch to Flash Lite:</label>
+    <input type="text" id="key-flash-lite" readonly>
+
+    <label>Switch to Flash:</label>
+    <input type="text" id="key-flash" readonly>
+
+    <label>Switch to Pro:</label>
+    <input type="text" id="key-pro" readonly>
+
+    <label>Toggle Extended Thinking:</label>
+    <input type="text" id="key-extended" readonly>
+
+    <h3>Dictation Controls</h3>
+
+    <label>Toggle Microphone:</label>
+    <input type="text" id="key-mic" readonly>
+    <p class="help" style="margin-bottom: 0;">Starts or pauses dictation.</p>
+
+    <label>Send During Dictation:</label>
+    <input type="text" id="key-send-dictation" readonly>
+    <p class="help" style="margin-bottom: 0;">Stops dictating and sends immediately, the same as Enter does.</p>
+
+    <label>Cancel Dictation:</label>
+    <input type="text" id="key-cancel-dictation" readonly>
+    <p class="help" style="margin-bottom: 0;">Stops dictating and discards what was said.</p>
+
+    <label>Stop Response:</label>
+    <input type="text" id="key-stop-response" readonly>
+    <p class="help" style="margin-bottom: 0;">Aborts a response that's currently generating, the same as clicking the stop button.</p>
+
+    <hr>
+
+    <h3>Defaults</h3>
+
+    <label>Default Homepage Model:</label>
+    <select id="default-home-model">
+      <option value="off">Don't change</option>
+      <option value="flashLite">Flash Lite</option>
+      <option value="flash">Flash</option>
+      <option value="pro">Pro</option>
+    </select>
+
+    <label>Default New Chat Model:</label>
+    <select id="default-new-chat-model">
+      <option value="off">Don't change</option>
+      <option value="previous">Same model as previous chat</option>
+      <option value="flashLite">Flash Lite</option>
+      <option value="flash">Flash</option>
+      <option value="pro">Pro</option>
+    </select>
+
+    <button id="save">Save Keybinds</button>
+    <div id="status"></div>
+    <div id="warning"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

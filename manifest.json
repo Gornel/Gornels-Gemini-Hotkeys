@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Gornel's Gemini Hotkeys",
+  "version": "1.133",
+  "description": "Adds hotkeys to Gemini that help you move QUICKLY while using it, and fixes some annoyances. Lightweight.",
+  "permissions": [
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://gemini.google.com/*"
+      ],
+      "js": ["error-monitor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
